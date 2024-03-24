@@ -1,3 +1,46 @@
-<h1>Emergency Room Wait Times</h1>
-<div>Hello - wait times are here</div>
-<div>Times</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Room Wait Times</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search ED Rooms with us!</h1>
+        <button onclick="openSearchPage()">Go to Search Page</button> <!-- Button to navigate to search page -->
+
+        <div id="searchPage" style="display: none;">
+            <h1>Search Page</h1>
+            <input type="text" id="searchBox" placeholder="Enter your search query"> <!-- Search box -->
+            <button onclick="search()">Search</button> <!-- Search button -->
+            <button onclick="goBack()">Go Back</button> <!-- Button to navigate back to welcome page -->
+        </div>
+    </div>
+
+    <script>
+        function openSearchPage() {
+            document.getElementById("searchPage").style.display = "block"; // Show search page
+        }
+
+        function goBack() {
+            document.getElementById("searchPage").style.display = "none"; // Hide search page
+        }
+
+        function search() {
+            var query = document.getElementById("searchBox").value; // Get the value of the search box
+            alert("You searched for: " + query); // Display an alert with the search query
+        }
+    </script>
+</body>
+</html>
